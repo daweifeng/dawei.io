@@ -50,6 +50,12 @@ code {
   overflow: hidden;
 }
 
+.selector a {
+  color: white;
+  text-decoration: none;
+}
+
+.selector > a > .text,
 .selector > .text {
   display: none;
 }
