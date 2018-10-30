@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,4 +11,70 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.main {
+  min-width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -110px 0 0 -130px;
+}
+
+.main .name {
+  font-size: 3rem;
+}
+
+.main .status {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  font-weight: 300;
+}
+
+.main .selectors {
+  margin: 10px auto;
+}
+
+.particle-bg {
+  height: 100vh;
+}
+
+.selector {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 10px;
+  transition: all 0.2s linear;
+  overflow: hidden;
+}
+
+.selector > .text {
+  display: none;
+}
+
+.selector:hover {
+  width: 100px;
+  border-radius: 12px;
+}
+
+.selector:hover .text {
+  padding: 0.25rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: white;
+  display: inherit;
+}
+
+.red-bg {
+  background: #ff909d;
+}
+
+.blue-bg {
+  background: #90e4ff;
+}
+
+.orange-bg {
+  background: #ffd08a;
 }
