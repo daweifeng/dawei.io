@@ -47,7 +47,7 @@ code {
   display: inline-block;
   margin-left: 10px;
   transition: all 0.2s linear;
-  overflow: hidden;
+  vertical-align: top;
 }
 
 .selector a {
