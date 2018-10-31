@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default () => {
   return (
-    <div>
+    <div className="animated bounce delay-2s">
       <div className="red-bg selector">
         <div className="text">
           <Link to="/project">Project</Link>
