@@ -14,11 +14,11 @@ code {
 }
 
 .main {
-  min-width: 200px;
+  min-width: 300px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -110px 0 0 -130px;
+  margin: -110px 0 0 -150px;
 }
 
 .main .name {
@@ -60,12 +60,12 @@ code {
   display: none;
 }
 
-.selector:hover {
-  width: 100px;
+.selector-expand {
+  width: 90px;
   border-radius: 12px;
 }
 
-.selector:hover .text {
+.text-expand {
   padding: 0.25rem 0.75rem;
   font-size: 1rem;
   line-height: 1rem;
@@ -83,4 +83,12 @@ code {
 
 .orange-bg {
   background: #ffd08a;
+}
+
+.delay-025{
+  animation-delay: 0.1s;
+}
+
+.delay-05{
+  animation-delay: 0.2s;
 }
