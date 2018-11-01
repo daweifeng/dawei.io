@@ -37,7 +37,7 @@ code {
 }
 
 .particle-bg {
-  height: 100vh;
+  height: calc(100vh - 4px);
 }
 
 .selector {
