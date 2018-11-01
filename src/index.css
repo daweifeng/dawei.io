@@ -76,13 +76,22 @@ code {
 .red-bg {
   background: #ff909d;
 }
+.red-bg:hover {
+  background: #e03e51;
+}
 
 .blue-bg {
   background: #90e4ff;
 }
+.blue-bg:hover {
+  background: #3cb7e0;
+}
 
 .orange-bg {
   background: #ffd08a;
+}
+.orange-bg:hover {
+  background: #f3af49;
 }
 
 .delay-025{

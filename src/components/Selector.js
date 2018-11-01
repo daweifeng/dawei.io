@@ -13,12 +13,14 @@ export default class Selector extends Component {
   handleOnAnimationEnd = (e) => {
     let {iteration} = this.state;
     let target = e.target;
+    // Check how many animation have been done
     if (iteration < 2) {
       iteration++;
       this.setState(prevState => ({targets: [...prevState.targets, target]}))
       this.setState({iteration});
       return;
     }
+    // Add last el in to the target arr
     let {targets} = this.state;
     targets = targets.concat([target]);
     targets.forEach((target) => {
