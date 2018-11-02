@@ -20,6 +20,7 @@ code {
   top: 50%;
   left: 50%;
   margin: -110px 0 0 -150px;
+  color: #333333;
 }
 
 .main .name {
@@ -67,11 +68,12 @@ code {
 }
 
 .text-expand {
+  margin: 0 auto;
   padding: 0.25rem 0.75rem;
   font-size: 1rem;
   line-height: 1rem;
   color: white;
-  display: inherit;
+  display: block;
 }
 
 .red-bg {

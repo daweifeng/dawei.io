@@ -85,23 +85,27 @@ export default class Selector extends Component {
   render() {
     return (
       <div className="" onAnimationEnd={this.handleOnAnimationEnd}>
-        <div className="red-bg selector animated bounce" id="Project" onMouseEnter={this.props.expand ? null : this.handleMouseEnter} onMouseLeave={this.props.expand ? null :this.handleMouseLeave}>
-          <div className="text">
-            <Link to="/project">Project</Link>
+        <Link to="/project">
+          <div className="red-bg selector animated bounce" id="Project" onMouseEnter={this.props.expand ? null : this.handleMouseEnter} onMouseLeave={this.props.expand ? null :this.handleMouseLeave}>
+            <div className="text">
+              Project
+            </div>
           </div>
-        </div>
-        <div className="blue-bg selector animated bounce delay-025" id="Github" onMouseEnter={this.props.expand ? null : this.handleMouseEnter} onMouseLeave={this.props.expand ? null :this.handleMouseLeave}>
-          <div className="text">
-            <a href="https://github.com/daweifeng">Github </a>
+        </Link>
+        <a href="https://github.com/daweifeng">
+          <div className="blue-bg selector animated bounce delay-025" id="Github" onMouseEnter={this.props.expand ? null : this.handleMouseEnter} onMouseLeave={this.props.expand ? null :this.handleMouseLeave}>
+            <div className="text">
+              Github
+            </div>
           </div>
-        </div>
+        </a>
+        <a href="https://s3-us-west-2.amazonaws.com/daweifeng/public/Dawei_Feng_Resume.pdf">
         <div className="orange-bg selector animated bounce delay-05" id="Resume" onMouseEnter={this.props.expand ? null : this.handleMouseEnter} onMouseLeave={this.props.expand ? null :this.handleMouseLeave}>
-          <div className="text">
-            <a href="https://s3-us-west-2.amazonaws.com/daweifeng/public/Dawei_Feng_Resume.pdf">
+          <div className="text">            
               Resume
-            </a>
           </div>
         </div>
+        </a>
       </div>
     );
   };
