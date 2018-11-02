@@ -14,3 +14,21 @@
     margin-top: 50px;
     color: #0e1e25;
 }
+
+.building {
+    width: 350px;
+    height: auto;
+    margin: 50px auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.building img {
+    width: 100px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
