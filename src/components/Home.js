@@ -67,7 +67,7 @@ export default () => {
         <div className="name">Dawei Feng</div>
         <div className="status">EECS @ UC Berkeley</div>
         <div className="selectors">
-          <Selector />
+          <Selector expand={true}/>
         </div>
       </div>
     </div>

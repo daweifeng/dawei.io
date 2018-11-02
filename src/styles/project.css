@@ -1,0 +1,15 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+.project {
+    margin-top: 50px;
+}
+
+.project > .title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 50px;
+}
