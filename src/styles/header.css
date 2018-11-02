@@ -1,24 +1,21 @@
 .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
 }
 
 .header-selectors {
-    text-align: center;
-    margin-left: auto;
+  text-align: center;
+  margin-left: auto;
 }
 
 .header-name {
-    
-    font-weight: 700;
-    font-size: 1.5rem;
-    text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none;
 }
 
 .header-name a {
-    text-decoration: none;
-    color: #0e1e25;
+  text-decoration: none;
+  color: #0e1e25;
 }
-

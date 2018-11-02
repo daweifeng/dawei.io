@@ -1,34 +1,38 @@
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px 15px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 15px;
 }
 
 .project {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .project > .title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-top: 50px;
-    color: #0e1e25;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 50px;
+  color: #0e1e25;
 }
 
 .building {
-    width: 350px;
-    height: auto;
-    margin: 50px auto;
-    padding-top: 100px;
-    text-align: center;
+  width: 350px;
+  height: auto;
+  margin: 50px auto;
+  padding-top: 100px;
+  text-align: center;
 }
 
 .building img {
-    width: 100px;
-    animation: spin 3s linear infinite;
+  width: 100px;
+  animation: spin 3s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
