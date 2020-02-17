@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import GoogleAnalytics from "react-ga";
+import { RouteComponentProps } from "react-router-dom";
 
 GoogleAnalytics.initialize("UA-128591856-1");
 
-const withTracker = (WrappedComponent, options = {}) => {
-  const trackPage = page => {
+const withTracker = (WrappedComponent: React.ComponentType, options = {}) => {
+  const trackPage = (page: string) => {
     GoogleAnalytics.set({
       page,
       ...options
@@ -13,14 +14,14 @@ const withTracker = (WrappedComponent, options = {}) => {
   };
 
   // eslint-disable-next-line
-  const HOC = class extends Component {
+  const HOC = class extends Component<RouteComponentProps> {
     componentDidMount() {
       // eslint-disable-next-line
       const page = this.props.location.pathname + this.props.location.search;
       trackPage(page);
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: RouteComponentProps) {
       const currentPage =
         prevProps.location.pathname + prevProps.location.search;
       const nextPage =

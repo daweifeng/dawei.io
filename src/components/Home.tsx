@@ -1,10 +1,10 @@
 import React from "react";
-import Particles from "react-particles-js";
+import Particles, { IParticlesParams } from "react-particles-js";
 
 import Selector from "./Selector";
 
 export default () => {
-  const particlesParam = {
+  const particlesParam:IParticlesParams = {
     particles: {
       number: { value: 20, density: { enable: true, value_area: 800 } },
       color: { value: "#787878" },
@@ -51,7 +51,7 @@ export default () => {
       },
       modes: {
         grab: { distance: 400, line_linked: { opacity: 1 } },
-        bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+        bubble: { distance: 400, size: 40, duration: 2, opacity: 8,},
         repulse: { distance: 200, duration: 0.4 },
         push: { particles_nb: 4 },
         remove: { particles_nb: 2 }
