@@ -1,17 +1,53 @@
 import React, { Component } from "react";
+
+import { getPosts } from "../service/ghost";
 import Header from "./Header";
 import PostOverview from "./PostOverview";
 
 import "../styles/project.css";
 
-class Project extends Component {
+
+type myState = {
+  posts: any
+}
+
+class Project extends Component<{}, myState> {
+  _isMounted: boolean;
+
+  constructor(props: any) {
+    super(props);
+
+    this.state = {
+      posts: []
+    };
+
+    this._isMounted = true;
+  }
+
+  async componentDidMount() {
+    const posts = await getPosts();
+
+    this._isMounted && this.setState({ posts });
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+  renderPosts = () => {
+    return this.state.posts.map((post: any, index: any) => (
+      <PostOverview data={post} key={`post__${index}`} />
+    )); 
+  }
+
   render() {
+    console.log(this.state.posts);
     return (
       <div className="container project">
         <Header />
         <div className="title">Project</div>
         <div className="posts">
-          <PostOverview />
+          {this.renderPosts()}
         </div>
         {/* <div className="building">
           <img src={require("../building.svg")} alt="*" />
