@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import moment from "moment";
 
 import "../styles/post.css";
@@ -11,6 +12,7 @@ export interface Props{
 export default  (props: Props): JSX.Element => {
 
   return (
+    <Link to={`/project/${props.data.id}`}>
     <div className="overview">
       <div className="img" style={{backgroundImage: `url(${props.data.feature_image})`}}>
       </div>
@@ -21,10 +23,11 @@ export default  (props: Props): JSX.Element => {
             {renderTags(props.data.tags)}
           </div>
 
-    <div className="time">{moment(props.data.updated_at).format("LL")}</div>
+        <div className="time">{moment(props.data.updated_at).format("LL")}</div>
           </div>
         </div>
     </div>
+    </Link>
   );
 };
 
