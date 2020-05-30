@@ -1,5 +1,6 @@
 .overview {
-  background: #f5f5f5;
+  cursor: pointer;
+  background: #fff;
   padding: 0.5rem 1rem;
   border-radius: 12px;
   margin-top: 1rem;
@@ -42,4 +43,19 @@
 
 .overview .info .time {
   color: #888888;
+}
+
+.post-title {
+  padding-top: 3rem;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.post {
+  padding: 2rem 0;
+}
+
+.post img {
+  max-width: 100%;
 }
