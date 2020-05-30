@@ -15,6 +15,12 @@
   color: #0e1e25;
 }
 
+.project .posts {
+  max-width: 1200px;
+  margin: 1rem auto;
+  
+}
+
 .building {
   width: 350px;
   height: auto;
