@@ -107,3 +107,9 @@ code {
 .delay-05 {
   animation-delay: 0.2s;
 }
+
+.footer {
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 1rem 0;
+}
