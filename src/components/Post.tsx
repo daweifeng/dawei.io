@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import moment from "moment";
 import Header from "./Header";
 import {getOnePost} from "../service/ghost";
 
@@ -6,6 +7,7 @@ import {getOnePost} from "../service/ghost";
 export default (props: any) => {
   const [htmlContent, setHtmlContent] = useState("");
   const [title, setTitle] = useState("");
+  const [updatedAt, setUpdatedAt] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,6 +15,7 @@ export default (props: any) => {
       
       setTitle(post.title);
       setHtmlContent(post.html);
+      setUpdatedAt(moment(post.updated_at).format("LL"));
     };
     fetchData();
   }, [props.match.params.id]);
@@ -23,6 +26,7 @@ export default (props: any) => {
       <div className="post-title">
         {title}
       </div>
+      <div className="updated-at">Updated on {updatedAt}</div>
       <div className="post" dangerouslySetInnerHTML={createMarkUp(htmlContent)} />
     </div>
   );

@@ -65,3 +65,10 @@
 .post img {
   max-width: 100%;
 }
+
+.updated-at {
+  padding-top: 1rem;
+  text-align: center;
+  color: #888888;
+  font-style: italic;
+}
