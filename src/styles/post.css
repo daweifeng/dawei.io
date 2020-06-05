@@ -41,6 +41,7 @@
   border: 1px solid #ff909d;
   border-radius: 1rem;
   padding: 0.2rem 0.5rem;
+  font-size: 1em;
 }
 
 .overview .info .time {
@@ -52,10 +53,13 @@
   font-size: 3rem;
   font-weight: 800;
   text-align: center;
+  line-height: 3rem;
 }
 
 .post {
   padding: 2rem 0;
+  font-size: 1.3rem;
+  line-height: 2rem;
 }
 
 .post img {
