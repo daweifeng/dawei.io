@@ -72,3 +72,10 @@
   color: #888888;
   font-style: italic;
 }
+
+@media only screen and (max-width: 600px) {
+  .overview .img {
+    display: block;
+    margin: auto;
+  }
+}
