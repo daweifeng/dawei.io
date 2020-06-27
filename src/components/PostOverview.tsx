@@ -12,7 +12,7 @@ export interface Props{
 export default  (props: Props): JSX.Element => {
 
   return (
-    <Link to={`/project/${props.data.id}`}>
+    <Link to={`/journey/${props.data.id}`}>
     <div className="overview">
       <div className="img" style={{backgroundImage: `url(${props.data.feature_image})`}}>
       </div>

@@ -11,7 +11,7 @@ type myState = {
   posts: any
 }
 
-class Project extends Component<{}, myState> {
+class Journey extends Component<{}, myState> {
   _isMounted: boolean;
 
   constructor(props: any) {
@@ -35,14 +35,12 @@ class Project extends Component<{}, myState> {
   }
 
   renderPosts = () => {
-    console.log(this.state.posts)
     return this.state.posts.map((post: any, index: any) => (
       <PostOverview data={post} key={`post__${index}`} />
     )); 
   }
 
   render() {
-    console.log(this.state.posts);
     return (
       <div className="container project">
         <Header />
@@ -59,4 +57,4 @@ class Project extends Component<{}, myState> {
   }
 }
 
-export default Project;
+export default Journey;
