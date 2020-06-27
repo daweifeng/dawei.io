@@ -2,7 +2,7 @@ import GhostContentAPI from "@tryghost/content-api";
 
 const api = new GhostContentAPI({
   url: "https://blog.dawei.io",
-  key: "09d856053732d1953fced1bbef",
+  key: "6113bcfdc657268ce9fae38a95",
   version: "v3"
 });
 

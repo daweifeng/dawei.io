@@ -35,6 +35,7 @@ class Project extends Component<{}, myState> {
   }
 
   renderPosts = () => {
+    console.log(this.state.posts)
     return this.state.posts.map((post: any, index: any) => (
       <PostOverview data={post} key={`post__${index}`} />
     )); 
@@ -45,14 +46,14 @@ class Project extends Component<{}, myState> {
     return (
       <div className="container project">
         <Header />
-        <div className="title">Project</div>
-        {/* <div className="posts">
+        <div className="title">Journey</div>
+        <div className="posts">
           {this.renderPosts()}
-        </div> */}
-        <div className="building">
+        </div>
+        {/* <div className="building">
           <img src={require("../building.svg")} alt="*" />
           <h2>I am updating my stories for you and will be back shortly.</h2>
-        </div>
+        </div> */}
       </div>
     );
   }

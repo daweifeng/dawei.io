@@ -117,14 +117,14 @@ export default class Selector extends Component<Props, State> {
   render() {
     return (
       <div className="" onAnimationEnd={this.handleOnAnimationEnd}>
-        <Link to="/project">
+        <Link to="/journey">
           <div
             className="red-bg selector animated bounce"
-            id="Project"
+            id="Journey"
             onMouseOver={this.props.expand ? undefined : this.handleMouseOver}
             onMouseLeave={this.props.expand ? undefined : this.handleMouseLeave}
           >
-            <div className="text">Project</div>
+            <div className="text">Journey</div>
           </div>
         </Link>
         <a href="https://github.com/daweifeng">

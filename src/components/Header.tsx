@@ -10,7 +10,7 @@ export default () => {
         <Link to="/">Dawei Feng</Link>
       </div>
       <div className="header-selectors">
-        <Selector expand={false} name={"Project"} />
+        <Selector expand={false} name={"Journey"} />
       </div>
     </div>
   );
