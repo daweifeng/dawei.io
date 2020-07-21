@@ -34,14 +34,17 @@
 .overview .info {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding-top:2rem;
 }
 
 .overview .info .tags span {
-  border: 1px solid #ff909d;
+  background-color: #888888;
   border-radius: 1rem;
   padding: 0.2rem 0.5rem;
-  font-size: 1em;
+  margin: 0 0.2rem;
+  font-size: 0.8em;
+  color: white;
 }
 
 .overview .info .time {
