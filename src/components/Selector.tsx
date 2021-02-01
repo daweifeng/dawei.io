@@ -127,24 +127,24 @@ export default class Selector extends Component<Props, State> {
             <div className="text">Journey</div>
           </div>
         </Link>
-        <a href="https://github.com/daweifeng">
+        <a href="https://www.linkedin.com/in/fengdawei/">
           <div
             className="blue-bg selector animated bounce delay-025"
             id="Github"
             onMouseOver={this.props.expand ? undefined : this.handleMouseOver}
             onMouseLeave={this.props.expand ? undefined : this.handleMouseLeave}
           >
-            <div className="text">Github</div>
+            <div className="text">LinkedIn</div>
           </div>
         </a>
-        <a href="https://s3-us-west-2.amazonaws.com/daweifeng/public/Dawei_Feng_Resume.pdf">
+        <a href="https://github.com/daweifeng">
           <div
             className="orange-bg selector animated bounce delay-05"
             id="Resume"
             onMouseOver={this.props.expand ? undefined : this.handleMouseOver}
             onMouseLeave={this.props.expand ? undefined : this.handleMouseLeave}
           >
-            <div className="text">Resume</div>
+            <div className="text">Github</div>
           </div>
         </a>
       </div>
