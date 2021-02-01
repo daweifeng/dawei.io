@@ -1,18 +1,18 @@
-import React from "react";
-import Particles, { IParticlesParams } from "react-particles-js";
+import React from 'react';
+import Particles, { IParticlesParams } from 'react-particles-js';
 
-import Selector from "./Selector";
+import Selector from './Selector';
 
 export default () => {
   const particlesParam:IParticlesParams = {
     particles: {
       number: { value: 20, density: { enable: true, value_area: 800 } },
-      color: { value: "#787878" },
+      color: { value: '#787878' },
       shape: {
-        type: "circle",
-        stroke: { width: 0, color: "#000000" },
+        type: 'circle',
+        stroke: { width: 0, color: '#000000' },
         polygon: { nb_sides: 5 },
-        image: { src: "img/github.svg", width: 100, height: 100 }
+        image: { src: 'img/github.svg', width: 100, height: 100 }
       },
       opacity: {
         value: 0.8759538822118227,
@@ -27,26 +27,26 @@ export default () => {
       line_linked: {
         enable: false,
         distance: 150,
-        color: "#ffffff",
+        color: '#ffffff',
         opacity: 0.4,
         width: 1
       },
       move: {
         enable: true,
         speed: 2,
-        direction: "none",
+        direction: 'none',
         random: false,
         straight: false,
-        out_mode: "out",
+        out_mode: 'out',
         bounce: false,
         attract: { enable: false, rotateX: 600, rotateY: 1200 }
       }
     },
     interactivity: {
-      detect_on: "canvas",
+      detect_on: 'canvas',
       events: {
-        onhover: { enable: false, mode: "repulse" },
-        onclick: { enable: true, mode: "push" },
+        onhover: { enable: false, mode: 'repulse' },
+        onclick: { enable: true, mode: 'push' },
         resize: true
       },
       modes: {

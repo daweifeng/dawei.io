@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from "react";
-import moment from "moment";
-import Header from "./Header";
-import {getOnePost} from "../service/ghost";
+import React, {useState, useEffect} from 'react';
+import moment from 'moment';
+import Header from './Header';
+import {getOnePost} from '../service/ghost';
 
 
 export default (props: any) => {
-  const [htmlContent, setHtmlContent] = useState("");
-  const [title, setTitle] = useState("");
-  const [updatedAt, setUpdatedAt] = useState("");
+  const [htmlContent, setHtmlContent] = useState('');
+  const [title, setTitle] = useState('');
+  const [updatedAt, setUpdatedAt] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,7 +15,7 @@ export default (props: any) => {
       
       setTitle(post.title);
       setHtmlContent(post.html);
-      setUpdatedAt(moment(post.updated_at).format("LL"));
+      setUpdatedAt(moment(post.updated_at).format('LL'));
     };
     fetchData();
   }, [props.match.params.id]);

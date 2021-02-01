@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 interface Props {
   expand: boolean,
@@ -45,16 +45,16 @@ export default class Selector extends Component<Props, State> {
       targets = targets.concat([target]);
       targets.forEach(target => {
         target.children[0].classList.remove(...target.children[0].classList);
-        target.classList.add("selector-expand");
-        target.children[0].classList.add("text-expand");
+        target.classList.add('selector-expand');
+        target.children[0].classList.add('text-expand');
       });
     } else {
       // Single Mode
       if (this.props.name === target.id) {
         this.setState({ mainTarget: target });
-        target.children[0].classList = "";
-        target.classList.add("selector-expand");
-        target.children[0].classList.add("text-expand");
+        target.children[0].classList = '';
+        target.classList.add('selector-expand');
+        target.children[0].classList.add('text-expand');
       }
     }
   };
@@ -70,24 +70,24 @@ export default class Selector extends Component<Props, State> {
       if ((this.state.iteration > 2) && (target !== undefined)) {
         // Collapse the main seletor
         const mainTarget = this.state.mainTarget;
-        mainTarget?.classList.remove("selector-expand");
+        mainTarget?.classList.remove('selector-expand');
         mainTarget?.children[0].classList.remove(...mainTarget?.classList);
-        mainTarget?.children[0].classList.add("text");
+        mainTarget?.children[0].classList.add('text');
 
         // Fix extra-expanding problem in mobile view
         let targets = this.state.targets;
         targets.forEach((t: HTMLDivElement) => {
-          t.classList.remove("selector-expand");
+          t.classList.remove('selector-expand');
           t.children[0].classList.remove(...t.children[0].classList);
-          t.children[0].classList.add("text");
+          t.children[0].classList.add('text');
         });
         targets = [target];
 
         // Expand the hovering selector
         this.setState({ hoveringEle: target, targets });
-        target.classList.add("selector-expand");
+        target.classList.add('selector-expand');
         target.children[0].classList.remove(...target.children[0].classList);
-        target.children[0].classList.add("text-expand");
+        target.children[0].classList.add('text-expand');
       }
     }
   };
@@ -103,14 +103,14 @@ export default class Selector extends Component<Props, State> {
     if ((this.state.iteration > 2) && (target !== null)) {
       let target = this.state.hoveringEle;
       const mainTarget = this.state.mainTarget;
-      target?.classList.remove("selector-expand");
+      target?.classList.remove('selector-expand');
       target?.children[0].classList.remove(...target.children[0].classList);
-      target?.children[0].classList.add("text");
+      target?.children[0].classList.add('text');
 
       // Recover main target
-      mainTarget?.classList.add("selector-expand");
+      mainTarget?.classList.add('selector-expand');
       mainTarget?.children[0].classList.remove(...mainTarget.children[0].classList);
-      mainTarget?.children[0].classList.add("text-expand");
+      mainTarget?.children[0].classList.add('text-expand');
     }
   };
 

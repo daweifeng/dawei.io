@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import moment from "moment";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import moment from 'moment';
 
-import "../styles/post.css";
+import '../styles/post.css';
 
 export interface Props{
   data: any,
@@ -23,7 +23,7 @@ export default  (props: Props): JSX.Element => {
             {renderTags(props.data.tags)}
           </div>
 
-        <div className="time">{moment(props.data.updated_at).format("LL")}</div>
+        <div className="time">{moment(props.data.updated_at).format('LL')}</div>
           </div>
         </div>
     </div>

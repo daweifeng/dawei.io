@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { getPosts } from "../service/ghost";
-import Header from "./Header";
-import PostOverview from "./PostOverview";
+import { getPosts } from '../service/ghost';
+import Header from './Header';
+import PostOverview from './PostOverview';
 
-import "../styles/project.css";
+import '../styles/project.css';
 
 
 type myState = {

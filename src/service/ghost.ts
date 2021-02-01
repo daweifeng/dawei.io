@@ -1,17 +1,17 @@
-import GhostContentAPI from "@tryghost/content-api";
+import GhostContentAPI from '@tryghost/content-api';
 
 const api = new GhostContentAPI({
-  url: "https://blog.dawei.io",
-  key: "6113bcfdc657268ce9fae38a95",
-  version: "v3"
+  url: 'https://blog.dawei.io',
+  key: '6113bcfdc657268ce9fae38a95',
+  version: 'v3'
 });
 
 export async function getPosts() {
   return await api.posts
     .browse({
-      limit: "all",
-      fields: ["id", "title", "feature_image","updated_at"],
-      include: "tags"
+      limit: 'all',
+      fields: ['id', 'title', 'feature_image','updated_at'],
+      include: 'tags'
     })
     .catch(err => {
       console.error(err);

@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { Route } from "react-router-dom";
-import withTracker from "./components/withTracker";
-import "./App.css";
-import Home from "./components/Home";
-import Journey from "./components/Journey";
-import Post from "./components/Post";
-import Footer from "./components/Footer";
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import withTracker from './components/withTracker';
+import './App.css';
+import Home from './components/Home';
+import Journey from './components/Journey';
+import Post from './components/Post';
+import Footer from './components/Footer';
 
 class App extends Component {
   render() {
