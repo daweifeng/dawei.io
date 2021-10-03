@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 services:
   dawei:
     restart: always
@@ -6,11 +6,11 @@ services:
       dockerfile: Dockerfile
       context: .
     environment:
-      - VIRTUAL_HOST=dawei.io
-      - LETSENCRYPT_HOST=dawei.io
-      - VIRTUAL_PORT=80  
+      - VIRTUAL_HOST=dawei.io,www.dawei.io
+      - LETSENCRYPT_HOST=dawei.io,www.dawei.io
+      - VIRTUAL_PORT=80
 
 networks:
-    default:
-      external:
-        name: nginx-proxy
+  default:
+    external:
+      name: nginx-proxy
