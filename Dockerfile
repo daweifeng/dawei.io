@@ -1,4 +1,4 @@
-FROM node:12.18.1-alpine AS build
+FROM node:lts-alpine AS build
 
 WORKDIR /app/dawei
 
