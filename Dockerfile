@@ -6,11 +6,11 @@ ENV PATH /app/dawei/node_modules/.bin:$PATH
 
 COPY package.json ./
 
-RUN npm install 
+RUN yarn install 
 
 COPY . ./
 
-RUN npm run build
+RUN yarn run build
 
 # production environment
 FROM nginx:stable-alpine
