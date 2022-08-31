@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, { AnimationEventHandler, Component } from 'react';
 import { Link } from 'react-router-dom';
 
 interface Props {
-  expand: boolean,
-  name?: string
+  expand: boolean;
+  name?: string;
 }
 
 interface State {
-  iteration: number,
-  targets: HTMLDivElement[],
-  hoveringEle?:   HTMLDivElement,
-  mainTarget?:   HTMLDivElement
+  iteration: number;
+  targets: HTMLDivElement[];
+  hoveringEle?: HTMLDivElement;
+  mainTarget?: HTMLDivElement;
 }
 
 export default class Selector extends Component<Props, State> {
@@ -20,13 +20,12 @@ export default class Selector extends Component<Props, State> {
     this.state = {
       iteration: 0,
       targets: [],
-      
     };
   }
 
-  handleOnAnimationEnd = e => {
+  handleOnAnimationEnd: AnimationEventHandler = (e) => {
     let { iteration } = this.state;
-    let target = e.target;
+    let target = e.target as HTMLDivElement;
     iteration++;
     this.setState({ iteration });
 
@@ -34,8 +33,8 @@ export default class Selector extends Component<Props, State> {
     if (this.props.expand) {
       // Check how many animation have been done
       if (iteration <= 2) {
-        this.setState(prevState => ({
-          targets: [...prevState.targets, target]
+        this.setState((prevState) => ({
+          targets: [...prevState.targets, target],
         }));
         return;
       }
@@ -43,7 +42,7 @@ export default class Selector extends Component<Props, State> {
       // Add last el in to the target arr
       let { targets } = this.state;
       targets = targets.concat([target]);
-      targets.forEach(target => {
+      targets.forEach((target) => {
         target.children[0].classList.remove(...target.children[0].classList);
         target.classList.add('selector-expand');
         target.children[0].classList.add('text-expand');
@@ -52,7 +51,7 @@ export default class Selector extends Component<Props, State> {
       // Single Mode
       if (this.props.name === target.id) {
         this.setState({ mainTarget: target });
-        target.children[0].classList = '';
+        target.children[0].classList.remove(...target.children[0].classList);
         target.classList.add('selector-expand');
         target.children[0].classList.add('text-expand');
       }
@@ -64,10 +63,10 @@ export default class Selector extends Component<Props, State> {
       return;
     }
     e.stopPropagation();
-    let target  = e.target as HTMLDivElement;
+    let target = e.target as HTMLDivElement;
     // Make sure the mouse is on the parent of the node
     if (target.id) {
-      if ((this.state.iteration > 2) && (target !== undefined)) {
+      if (this.state.iteration > 2 && target !== undefined) {
         // Collapse the main seletor
         const mainTarget = this.state.mainTarget;
         mainTarget?.classList.remove('selector-expand');
@@ -100,7 +99,7 @@ export default class Selector extends Component<Props, State> {
     if (target.id === this.props.name) {
       return;
     }
-    if ((this.state.iteration > 2) && (target !== null)) {
+    if (this.state.iteration > 2 && target !== null) {
       let target = this.state.hoveringEle;
       const mainTarget = this.state.mainTarget;
       target?.classList.remove('selector-expand');
@@ -109,7 +108,9 @@ export default class Selector extends Component<Props, State> {
 
       // Recover main target
       mainTarget?.classList.add('selector-expand');
-      mainTarget?.children[0].classList.remove(...mainTarget.children[0].classList);
+      mainTarget?.children[0].classList.remove(
+        ...mainTarget.children[0].classList
+      );
       mainTarget?.children[0].classList.add('text-expand');
     }
   };
