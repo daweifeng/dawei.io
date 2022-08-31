@@ -4,11 +4,11 @@ import { RouteComponentProps } from 'react-router-dom';
 
 GoogleAnalytics.initialize('UA-128591856-1');
 
-const withTracker = (WrappedComponent: React.ComponentType, options = {}) => {
+const withTracker = (WrappedComponent: any, options = {}) => {
   const trackPage = (page: string) => {
     GoogleAnalytics.set({
       page,
-      ...options
+      ...options,
     });
     GoogleAnalytics.pageview(page);
   };

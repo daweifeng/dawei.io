@@ -6,10 +6,9 @@ import PostOverview from './PostOverview';
 
 import '../styles/project.css';
 
-
 type myState = {
-  posts: any
-}
+  posts: any;
+};
 
 class Journey extends Component<{}, myState> {
   _isMounted: boolean;
@@ -18,7 +17,7 @@ class Journey extends Component<{}, myState> {
     super(props);
 
     this.state = {
-      posts: []
+      posts: [],
     };
 
     this._isMounted = true;
@@ -37,17 +36,15 @@ class Journey extends Component<{}, myState> {
   renderPosts = () => {
     return this.state.posts.map((post: any, index: any) => (
       <PostOverview data={post} key={`post__${index}`} />
-    )); 
-  }
+    ));
+  };
 
   render() {
     return (
       <div className="container project">
         <Header />
         <div className="title">Journey</div>
-        <div className="posts">
-          {this.renderPosts()}
-        </div>
+        <div className="posts">{this.renderPosts()}</div>
         {/* <div className="building">
           <img src={require("../building.svg")} alt="*" />
           <h2>I am updating my stories for you and will be back shortly.</h2>
