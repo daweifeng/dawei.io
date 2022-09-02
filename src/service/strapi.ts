@@ -1,15 +1,4 @@
-import Strapi from 'strapi-sdk-js';
-
-const strapi = new Strapi({
-  url: 'https://content.dawei.io',
-  prefix: '/api',
-  store: {
-    key: '',
-    useLocalStorage: false,
-    cookieOptions: { path: '/' },
-  },
-  axiosOptions: {},
-});
+const url = 'https://content.dawei.io/api';
 
 export type Post = {
   id: string;
@@ -30,13 +19,12 @@ export type Post = {
   };
 };
 
-export const findAllPosts = () => {
-  return strapi.find<Post[]>('posts', {
-    fields: ['title', 'content', 'updatedAt'],
-    populate: ['cover', 'tags'],
-  });
+export const findAllPosts = async () => {
+  return await (
+    await fetch(`${url}/posts?populate[0]=cover&populate[1]=tags`)
+  ).json();
 };
 
-export const findOnePost = (id: string) => {
-  return strapi.findOne<Post>('posts', id);
+export const findOnePost = async (id: string) => {
+  return (await fetch(`${url}/posts/${id}`)).json();
 };

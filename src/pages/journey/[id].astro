@@ -5,19 +5,6 @@ import JourneyLayout from '../../layouts/JourneyLayout.astro';
 import { findAllPosts, findOnePost } from '../../service/strapi';
 import '../../styles/post.css';
 
-export async function getStaticPaths() {
-  const { data: posts } = await findAllPosts();
-
-  if (!posts) {
-    return [];
-  }
-  return posts.map((post) => {
-    return {
-      params: { id: post.id },
-    }
-  })
-}
-
 const { id } = Astro.params;
 const { data: post} = await findOnePost(id as string);
 const showdownConverter = new showdown.Converter();
