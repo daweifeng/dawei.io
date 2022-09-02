@@ -1,0 +1,38 @@
+---
+import moment from 'moment';
+import JourneyLayout from '../../layouts/JourneyLayout.astro';
+import { getOnePost, getPosts } from '../../service/ghost';
+import '../../styles/post.css';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+
+  if (!posts) {
+    return [];
+  }
+  return posts.map((post) => {
+    return {
+      params: { id: post.id },
+    }
+  })
+}
+
+const { id } = Astro.params;
+const post = await getOnePost(id as string);
+---
+<JourneyLayout>
+    {
+      post ? 
+        <>
+          <div class="post-title">{post.title}</div>
+          <div class="updated-at">Updated on {moment(post.updated_at).format('LL')}</div>
+          <div
+            class="post"
+          >
+            <Fragment set:html={post.html} />
+          </div>
+        </> 
+      : <div>post does not exists</div>
+    }
+   
+</JourneyLayout>

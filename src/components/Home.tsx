@@ -4,7 +4,7 @@ import { loadFull } from 'tsparticles';
 
 import Selector from './Selector';
 
-export default () => {
+export default function Home() {
   const particlesInit = useCallback(async (engine: any) => {
     await loadFull(engine);
   }, []);
@@ -79,4 +79,4 @@ export default () => {
       </div>
     </div>
   );
-};
+}

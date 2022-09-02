@@ -1,0 +1,12 @@
+---
+import '../styles/project.css';
+import Header from '../components/Header.astro';
+import MainLayout from './MainLayout.astro';
+---
+<MainLayout>
+  <div class="container project">
+    <Header />
+    <slot />
+  </div>
+</MainLayout>
+

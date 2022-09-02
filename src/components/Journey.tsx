@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import { getPosts } from '../service/ghost';
-import Header from './Header';
 import PostOverview from './PostOverview';
 
 import '../styles/project.css';
@@ -41,15 +40,14 @@ class Journey extends Component<{}, myState> {
 
   render() {
     return (
-      <div className="container project">
-        <Header />
+      <>
         <div className="title">Journey</div>
         <div className="posts">{this.renderPosts()}</div>
         {/* <div className="building">
           <img src={require("../building.svg")} alt="*" />
           <h2>I am updating my stories for you and will be back shortly.</h2>
         </div> */}
-      </div>
+      </>
     );
   }
 }

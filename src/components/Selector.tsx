@@ -1,5 +1,4 @@
 import React, { AnimationEventHandler, Component } from 'react';
-import { Link } from 'react-router-dom';
 
 interface Props {
   expand: boolean;
@@ -118,7 +117,7 @@ export default class Selector extends Component<Props, State> {
   render() {
     return (
       <div className="" onAnimationEnd={this.handleOnAnimationEnd}>
-        <Link to="/journey">
+        <a href="/journey">
           <div
             className="red-bg selector animated bounce"
             id="Journey"
@@ -127,7 +126,7 @@ export default class Selector extends Component<Props, State> {
           >
             <div className="text">Journey</div>
           </div>
-        </Link>
+        </a>
         <a href="https://www.linkedin.com/in/fengdawei/">
           <div
             className="blue-bg selector animated bounce delay-025"
