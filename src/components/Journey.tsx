@@ -1,55 +1,38 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { getPosts } from '../service/ghost';
 import PostOverview from './PostOverview';
 
 import '../styles/project.css';
 
-type myState = {
-  posts: any;
-};
+export default function Journey() {
+  const [posts, setPosts] = useState<any[]>([]);
 
-class Journey extends Component<{}, myState> {
-  _isMounted: boolean;
+  useEffect(() => {
+    async function getAllPosts() {
+      const posts = await getPosts();
+      if (posts) {
+        setPosts(posts);
+      }
+    }
 
-  constructor(props: any) {
-    super(props);
+    getAllPosts();
+  }, []);
 
-    this.state = {
-      posts: [],
-    };
-
-    this._isMounted = true;
-  }
-
-  async componentDidMount() {
-    const posts = await getPosts();
-
-    this._isMounted && this.setState({ posts });
-  }
-
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
-
-  renderPosts = () => {
-    return this.state.posts.map((post: any, index: any) => (
+  const renderPosts = () => {
+    return posts.map((post: any, index: any) => (
       <PostOverview data={post} key={`post__${index}`} />
     ));
   };
 
-  render() {
-    return (
-      <>
-        <div className="title">Journey</div>
-        <div className="posts">{this.renderPosts()}</div>
-        {/* <div className="building">
+  return (
+    <>
+      <div className="title">Journey</div>
+      <div className="posts">{renderPosts()}</div>
+      {/* <div className="building">
           <img src={require("../building.svg")} alt="*" />
           <h2>I am updating my stories for you and will be back shortly.</h2>
         </div> */}
-      </>
-    );
-  }
+    </>
+  );
 }
-
-export default Journey;

@@ -8,7 +8,7 @@ export interface Props {
   key: string;
 }
 
-export default (props: Props): JSX.Element => {
+export default function PostOverview(props: Props) {
   return (
     <a href={`/journey/${props.data.id}`}>
       <div className="overview">
@@ -29,7 +29,7 @@ export default (props: Props): JSX.Element => {
       </div>
     </a>
   );
-};
+}
 
 const renderTags = (tags: any) => {
   return tags.map((tag: any, index: any) => (

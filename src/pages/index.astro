@@ -1,8 +1,12 @@
 ---
+import Intro from '../components/Intro.astro';
+import Particles from '../components/Particles.astro';
 import MainLayout from '../layouts/MainLayout.astro';
-import Home from '../components/Home';
 ---
 <MainLayout>
-  <Home client:load />
+  <div>
+    <Particles />
+    <Intro />
+  </div>
 </MainLayout>
 
