@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
-import { getPosts } from '../service/ghost';
 import PostOverview from './PostOverview';
 
 import '../styles/project.css';
+import { findAllPosts } from '../service/strapi';
 
 export default function Journey() {
   const [posts, setPosts] = useState<any[]>([]);
 
   useEffect(() => {
     async function getAllPosts() {
-      const posts = await getPosts();
-      if (posts) {
-        setPosts(posts);
+      const { data } = await findAllPosts();
+      if (data) {
+        setPosts(data);
       }
     }
 

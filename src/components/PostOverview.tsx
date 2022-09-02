@@ -2,27 +2,31 @@ import React from 'react';
 import moment from 'moment';
 
 import '../styles/post.css';
+import { Post } from '../service/strapi';
 
 export interface Props {
-  data: any;
+  data: Post;
   key: string;
 }
 
-export default function PostOverview(props: Props) {
+export default function PostOverview({ data }: Props) {
+  console.log(data);
   return (
-    <a href={`/journey/${props.data.id}`}>
+    <a href={`/journey/${data.id}`}>
       <div className="overview">
         <div
           className="img"
-          style={{ backgroundImage: `url(${props.data.feature_image})` }}
+          style={{
+            backgroundImage: `url(https://content.dawei.io${data.attributes.cover.data.attributes.url})`,
+          }}
         ></div>
         <div className="content">
-          <div className="title">{props.data.title}</div>
+          <div className="title">{data.attributes.title}</div>
           <div className="info">
-            <div className="tags">{renderTags(props.data.tags)}</div>
+            <div className="tags">{renderTags(data.attributes.tags.data)}</div>
 
             <div className="time">
-              {moment(props.data.updated_at).format('LL')}
+              {moment(data.attributes.updatedAt).format('LL')}
             </div>
           </div>
         </div>
