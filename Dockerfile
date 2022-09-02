@@ -14,7 +14,7 @@ RUN yarn run build
 
 # production environment
 FROM nginx:stable-alpine
-COPY --from=build /app/dawei/build /usr/share/nginx/html
+COPY --from=build /app/dawei/dist /usr/share/nginx/html
 # new
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
