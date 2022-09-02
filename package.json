@@ -1,12 +1,11 @@
 {
   "name": "dawei.io",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "homepage": "https://daweifeng.github.io/",
   "dependencies": {
     "@tryghost/content-api": "^1.4.1",
-    "@types/jest": "^25.2.3",
-    "@types/node": "^13.13.9",
+    "@types/node": "16.11.7",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "@types/tryghost__content-api": "^1.3.4",
@@ -15,9 +14,6 @@
     "moment": "^2.26.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-ga": "^3.3.0",
-    "react-tsparticles": "^2.2.4",
-    "tsparticles": "^2.2.4",
     "typescript": "^4.8.2"
   },
   "scripts": {

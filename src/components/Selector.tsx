@@ -116,7 +116,7 @@ export default class Selector extends Component<Props, State> {
 
   render() {
     return (
-      <div className="" onAnimationEnd={this.handleOnAnimationEnd}>
+      <div onAnimationEnd={this.handleOnAnimationEnd}>
         <a href="/journey">
           <div
             className="red-bg selector animated bounce"
