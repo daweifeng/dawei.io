@@ -12,10 +12,7 @@ COPY . ./
 
 RUN yarn run build
 
-# production environment
-FROM nginx:stable-alpine
-COPY --from=build /app/dawei/dist /usr/share/nginx/html
-# new
-COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+FROM denoland/deno:debian
+COPY --from=build /app/dawei/dist /app/dawei
+CMD [ "deno", "run", "--allow-net", "--allow-read", "--allow-env", "/app/dawei/server/entry.mjs" ]
+
