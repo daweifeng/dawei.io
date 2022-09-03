@@ -1,4 +1,3 @@
-import React from 'react';
 import moment from 'moment';
 
 import '../styles/post.css';
@@ -10,7 +9,6 @@ export interface Props {
 }
 
 export default function PostOverview({ data }: Props) {
-  console.log(data);
   return (
     <a href={`/journey/${data.id}`}>
       <div className="overview">
