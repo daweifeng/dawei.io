@@ -14,5 +14,6 @@ RUN yarn run build
 
 FROM denoland/deno:debian
 COPY --from=build /app/dawei/dist /app/dawei
+EXPOSE 8085
 CMD [ "deno", "run", "--allow-net", "--allow-read", "--allow-env", "/app/dawei/server/entry.mjs" ]
 
