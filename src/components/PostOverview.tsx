@@ -36,6 +36,6 @@ export default function PostOverview({ data }: Props) {
 
 const renderTags = (tags: any) => {
   return tags.map((tag: any, index: any) => (
-    <span key={`tag_${tag.name}_{${index}}`}>{tag.name}</span>
+    <span key={`tag_${tag.attributes.name}_{${index}}`}>{tag.attributes.name}</span>
   ));
 };
