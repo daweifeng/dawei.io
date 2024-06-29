@@ -1,8 +1,16 @@
 ---
-import Journey from '../../components/Journey';
-import JourneyLayout from '../../layouts/JourneyLayout.astro';
-
+import JourneyLayout from "../../layouts/JourneyLayout.astro";
+import buildingSvgReference from "../../building.svg";
+import "../../styles/project.css";
 ---
+
 <JourneyLayout>
-  <Journey client:load />
+  <div class="title">Journey</div>
+  {/* <div className="posts">{renderPosts()}</div> */}
+  <div class="building">
+    <img src={buildingSvgReference.src} alt="*" />
+    <h2>
+      I am updating my stories for you and will be back shortly. Stay tuned!
+    </h2>
+  </div>
 </JourneyLayout>

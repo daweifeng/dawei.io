@@ -1,0 +1,18 @@
+---
+import moment from "moment";
+import JourneyLayout from "./JourneyLayout.astro";
+import "../styles/post.css";
+
+const { frontmatter } = Astro.props;
+---
+
+<JourneyLayout>
+    <div class="post-title">{frontmatter.title}</div>
+    <div class="updated-at">
+        Updated on {moment(frontmatter.updatedAt, "MM-DD-YYYY").format("LL")}
+    </div>
+    <div class="post">
+        <slot />
+        <!-- Markdown content is injected here -->
+    </div>
+</JourneyLayout>
